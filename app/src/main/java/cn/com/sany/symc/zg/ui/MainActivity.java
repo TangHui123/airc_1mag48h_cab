@@ -25,11 +25,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.io.File;
 import java.lang.ref.WeakReference;
 import java.math.BigInteger;
-import java.util.Timer;
 import java.util.TimerTask;
+
 import cn.com.sany.symc.zg.R;
 import cn.com.sany.symc.zg.entity.MultipleStateInfo;
 import cn.com.sany.symc.zg.entity.SystemBrightManager;
@@ -42,53 +41,51 @@ import cn.com.sany.symc.zg.util.CacheData;
 import cn.com.sany.symc.zg.util.LogUtil;
 
 /**
- *
  * 首页应用
- *
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener,CameraInterface.CamOpenOverCallback  {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, CameraInterface.CamOpenOverCallback {
 
     public static final String TAG = "MainActivity.class";
     private LinearLayout testLLayout;    //测试界面
     private LinearLayout mainLLayout;    //内容显示主界面
-    private LinearLayout  infoLayout;
+    private LinearLayout infoLayout;
 
     private TextView ArmSpreadStatus;
     private TextView FoamLevel;
     private TextView WaterPumpStatus;
     private TextView waterLevel;
-//    private TextView TurretAngleLow;
+    //    private TextView TurretAngleLow;
 //    private TextView TurretAngleHigh;
     private TextView TurretAngle;
-//    private TextView EngineSpeedLow;
+    //    private TextView EngineSpeedLow;
 //    private TextView EngineSpeedHigh;
     private TextView EngineSpeed;
     private TextView HydraulicPress;
     private TextView PumpVentPress;
     private TextView ErrCode;
 
-//    private TextView ArmAngle1L;
+    //    private TextView ArmAngle1L;
 //    private TextView ArmAngle1H;
     private TextView ArmAngle1;
-//    private TextView ArmAngle2L;
+    //    private TextView ArmAngle2L;
 //    private TextView ArmAngle2H;
     private TextView ArmAngle2;
-//    private TextView ArmAngle3L;
+    //    private TextView ArmAngle3L;
 //    private TextView ArmAngle3H;
     private TextView ArmAngle3;
-//    private TextView ArmAngle4L;
+    //    private TextView ArmAngle4L;
 //    private TextView ArmAngle4H;
     private TextView ArmAngle4;
-//    private TextView ArmAngle5L;
+    //    private TextView ArmAngle5L;
 //    private TextView ArmAngle5H;
     private TextView ArmAngle5;
-//    private TextView ArmAngle6L;
+    //    private TextView ArmAngle6L;
 //    private TextView ArmAngle6H;
     private TextView ArmAngle6;
-//    private TextView WaterFlowLow;
+    //    private TextView WaterFlowLow;
 //    private TextView WaterFlowHigh;
     private TextView WaterFlow;
-//    private TextView WindSpeedLow;
+    //    private TextView WindSpeedLow;
 //    private TextView WindSpeedHigh;
     private TextView WindSpeed;
 
@@ -99,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private LinearLayout warnLLayout;
     private LinearLayout waterLLayout;
-   // private LinearLayout startLLayout;
+    // private LinearLayout startLLayout;
     private TextView WirelessLinkStatus;
     private TextView RemoteCtrlStatus;
 
@@ -150,8 +147,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView ivRight3;
     private ImageView ivRight4;
 
-    private ImageView  ivLeftTwo1111;
-    private ImageView  ivLeftTwo1122;
+    private ImageView ivLeftTwo1111;
+    private ImageView ivLeftTwo1122;
 
     private ImageView ivLeftTwo1211;
     private ImageView ivLeftTwo1222;
@@ -189,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView ivMid6622;
 
     private ImageView ivStop1111;
-    private TextView  tvStop1111;
+    private TextView tvStop1111;
 
     private TextView tvRightTwo1111;
 
@@ -249,11 +246,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MessageShowFragment messageShowFragment = new MessageShowFragment();
 
     int count = 0;
-    private long[] mHints=new long[3];
+    private long[] mHints = new long[3];
     private PasswordInputFragment passwordInputFragment;
-    private static int  change_page_old = 0;  //保存之前一次上升沿  0x01从0到1切换
+    private static int change_page_old = 0;  //保存之前一次上升沿  0x01从0到1切换
 
-    private static int  change_bright_old = 0;  //保存之前一次亮度上升沿   0x04从0到1切换
+    private static int change_bright_old = 0;  //保存之前一次亮度上升沿   0x04从0到1切换
 
     private static int cameraTime_flag = 0;
 
@@ -261,16 +258,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    int error_num = 0;
 
     private byte temp;
-    private byte [] temp_1 = new byte[1];
-    private byte [] temp_3 = new byte[3];
-    private byte [] temp_2 = new byte[2];
-    private byte [] temp_4 = new byte[4];
-    private byte [] temp_6 = new byte[6];
-    private byte [] temp_12 = new byte[12];
-    private byte [] temp_16 = new byte[16];
-    private byte [] temp_20 = new byte[20];
-    private byte [] temp_32 = new byte[32];
-    private byte [] temp_64 = new byte[64];
+    private byte[] temp_1 = new byte[1];
+    private byte[] temp_3 = new byte[3];
+    private byte[] temp_2 = new byte[2];
+    private byte[] temp_4 = new byte[4];
+    private byte[] temp_6 = new byte[6];
+    private byte[] temp_12 = new byte[12];
+    private byte[] temp_16 = new byte[16];
+    private byte[] temp_20 = new byte[20];
+    private byte[] temp_32 = new byte[32];
+    private byte[] temp_64 = new byte[64];
 
 
     @Override
@@ -294,9 +291,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             StrictMode.setVmPolicy(builder.build());
         }
         //初始化布局
-        try{
+        try {
             initView(savedInstanceState);
-        }catch (Exception e){
+        } catch (Exception e) {
 //            SharedPreferences share = getSharedPreferences("Acitivity", Context.MODE_WORLD_READABLE);
 //            error_num = share.getInt("error_num", 0);
 //            error_num = error_num + 1;
@@ -314,7 +311,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     LogUtil.d(TAG, "===========initSerial=========start=============");
                     initSerial();
                 } catch (Exception e) {
-                    LogUtil.e(TAG,"========initSerial===========打开串口数据异常==================>"+e.getMessage());
+                    LogUtil.e(TAG, "========initSerial===========打开串口数据异常==================>" + e.getMessage());
                 }
             }
         }, 1200);    //先连接控制器，获取控制器版本号 4000 to 1000
@@ -325,13 +322,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
                 try {
-                   // CacheData.setMsg_info("==========cameraIndex7=======cameraIndex=======收到数据======>" + cameraIndex ,0);
+                    // CacheData.setMsg_info("==========cameraIndex7=======cameraIndex=======收到数据======>" + cameraIndex ,0);
                     cameraIndex = 7;
                     CameraInterface.getInstance().doStopCamera();
                     OpenCameraInfo();
                 } catch (Exception e) {
 
-                    LogUtil.e(TAG,"========初始化数据异常===============>"+e.getMessage());
+                    LogUtil.e(TAG, "========初始化数据异常===============>" + e.getMessage());
                 }
             }
         }, 1000);
@@ -366,22 +363,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onPostResume();
     }
 
-    public int getCameraIndex()
-    {
+    public int getCameraIndex() {
         return cameraIndex;
     }
 
-    public void setCameraIndex(int index)
-    {
+    public void setCameraIndex(int index) {
         this.cameraIndex = index;
     }
 
     /**
-     *
      * 控件初始化
-     *
      */
-    private void initView(Bundle savedInstanceState){
+    private void initView(Bundle savedInstanceState) {
 
         //初始化控件基本信息
         initBaseInfo();
@@ -389,14 +382,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //初始化摄像头信息
         initCameraInfo();
 
-       // OpenCameraInfo();
+        // OpenCameraInfo();
         SystemBrightManager.stopAutoBrightness(this);
         SharedPreferences share = getSharedPreferences("Acitivity", Context.MODE_WORLD_READABLE);
         int val = share.getInt("value", 200);
         SystemBrightManager.setBrightness(this, val);
 
-        CacheData.setMsg_info("==========initView=======brightNess==========tvBright============"+"" + (val*100)/250 + "%",1);
-        tvBright.setText("" + (val*100)/250 + "%");
+        CacheData.setMsg_info("==========initView=======brightNess==========tvBright============" + "" + (val * 100) / 250 + "%", 1);
+        tvBright.setText("" + (val * 100) / 250 + "%");
         SharedPreferences.Editor editor = share.edit();//获取编辑器
         editor.putInt("value", val);
         editor.commit();//提交修改
@@ -408,7 +401,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private String stringSub(String pa_str,String son_str){
+    private String stringSub(String pa_str, String son_str) {
         StringBuffer sb = new StringBuffer(pa_str);
         int index = pa_str.indexOf(son_str);
         sb.delete(index, index + son_str.length());
@@ -417,20 +410,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 将byte[]转为各种进制的字符串
+     *
      * @param bytes byte[]
      * @return 转换后的字符串
      */
-    private String byteToString(byte[] bytes) throws Exception{
+    private String byteToString(byte[] bytes) throws Exception {
         String str = new String(bytes, "GBK");
-        return TextUtils.isEmpty(str)?str:str.trim();
+        return TextUtils.isEmpty(str) ? str : str.trim();
     }
 
     /**
-     *
      * 初始化缓存数据
-     *
      */
-    private void initData(){
+    private void initData() {
 //        if (timerTask_loc != null){
 //            timerTask_loc.cancel();  //将原任务从队列中移除
 //        }
@@ -442,24 +434,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
-
-
-
-
     /**
      * 初始化控件基本信息
+     *
      * @param
      */
-    private void initBaseInfo(){
-        testLLayout = (LinearLayout)findViewById(R.id.statusLayout551);
-        mainLLayout = (LinearLayout)findViewById(R.id.statusLayout552);
-        infoLayout = (LinearLayout)findViewById(R.id.infoLayout);
+    private void initBaseInfo() {
+        testLLayout = (LinearLayout) findViewById(R.id.statusLayout551);
+        mainLLayout = (LinearLayout) findViewById(R.id.statusLayout552);
+        infoLayout = (LinearLayout) findViewById(R.id.infoLayout);
 
         ArmSpreadStatus = (TextView) findViewById(R.id.ArmSpreadStatus);
         WaterPumpStatus = (TextView) findViewById(R.id.WaterPumpStatus);
         tvDxState = (TextView) findViewById(R.id.tvDxState);   //倒吸：开启/关闭
-        tvdxTitle = (TextView)findViewById(R.id.tvdxTitle);   //倒吸：开启/关闭
+        tvdxTitle = (TextView) findViewById(R.id.tvdxTitle);   //倒吸：开启/关闭
         tvBright = (TextView) findViewById(R.id.tvBright);   //亮度
         signalStrengthLayout = (FrameLayout) findViewById(R.id.signalStrengthLayout);
         signalStrengthLayout1 = (FrameLayout) findViewById(R.id.signalStrengthLayout1);
@@ -544,151 +532,153 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         //测试界面 start
-        ivLeft1 = (ImageView)findViewById(R.id.ivLeft1);
-        ivLeft2 = (ImageView)findViewById(R.id.ivLeft2);
-        ivLeft3 = (ImageView)findViewById(R.id.ivLeft3);
-        ivLeft4 = (ImageView)findViewById(R.id.ivLeft4);
+        ivLeft1 = (ImageView) findViewById(R.id.ivLeft1);
+        ivLeft2 = (ImageView) findViewById(R.id.ivLeft2);
+        ivLeft3 = (ImageView) findViewById(R.id.ivLeft3);
+        ivLeft4 = (ImageView) findViewById(R.id.ivLeft4);
 
-        ivRight1 = (ImageView)findViewById(R.id.ivRight1);
-        ivRight2 = (ImageView)findViewById(R.id.ivRight2);
-        ivRight3 = (ImageView)findViewById(R.id.ivRight3);
-        ivRight4 = (ImageView)findViewById(R.id.ivRight4);
+        ivRight1 = (ImageView) findViewById(R.id.ivRight1);
+        ivRight2 = (ImageView) findViewById(R.id.ivRight2);
+        ivRight3 = (ImageView) findViewById(R.id.ivRight3);
+        ivRight4 = (ImageView) findViewById(R.id.ivRight4);
 
-       // tvLeftTwo1111 = (TextView)findViewById(R.id.tvLeftTwo1111);
+        // tvLeftTwo1111 = (TextView)findViewById(R.id.tvLeftTwo1111);
 
-        ivLeftTwo1111 = (ImageView)findViewById(R.id.ivLeftTwo1111);
-        ivLeftTwo1122 = (ImageView)findViewById(R.id.ivLeftTwo1122);
+        ivLeftTwo1111 = (ImageView) findViewById(R.id.ivLeftTwo1111);
+        ivLeftTwo1122 = (ImageView) findViewById(R.id.ivLeftTwo1122);
 
-        ivLeftTwo1211 = (ImageView)findViewById(R.id.ivLeftTwo1211);
-        ivLeftTwo1222 = (ImageView)findViewById(R.id.ivLeftTwo1222);
+        ivLeftTwo1211 = (ImageView) findViewById(R.id.ivLeftTwo1211);
+        ivLeftTwo1222 = (ImageView) findViewById(R.id.ivLeftTwo1222);
 
-        ivLeftTwo2111 = (ImageView)findViewById(R.id.ivLeftTwo2111);
-        ivLeftTwo2122 = (ImageView)findViewById(R.id.ivLeftTwo2122);
+        ivLeftTwo2111 = (ImageView) findViewById(R.id.ivLeftTwo2111);
+        ivLeftTwo2122 = (ImageView) findViewById(R.id.ivLeftTwo2122);
 
-        ivLeftThree2211 = (ImageView)findViewById(R.id.ivLeftThree2211);
-        ivLeftThree2222 = (ImageView)findViewById(R.id.ivLeftThree2222);
-        ivLeftThree2233 = (ImageView)findViewById(R.id.ivLeftThree2233);
+        ivLeftThree2211 = (ImageView) findViewById(R.id.ivLeftThree2211);
+        ivLeftThree2222 = (ImageView) findViewById(R.id.ivLeftThree2222);
+        ivLeftThree2233 = (ImageView) findViewById(R.id.ivLeftThree2233);
 
-        ivLeftTwo3111 = (ImageView)findViewById(R.id.ivLeftTwo3111);
-        ivLeftTwo3122 = (ImageView)findViewById(R.id.ivLeftTwo3122);
+        ivLeftTwo3111 = (ImageView) findViewById(R.id.ivLeftTwo3111);
+        ivLeftTwo3122 = (ImageView) findViewById(R.id.ivLeftTwo3122);
 
-        ivMid1111 = (ImageView)findViewById(R.id.ivMid1111);
-        ivMid1122 = (ImageView)findViewById(R.id.ivMid1122);
+        ivMid1111 = (ImageView) findViewById(R.id.ivMid1111);
+        ivMid1122 = (ImageView) findViewById(R.id.ivMid1122);
 
-        ivMidThree2211 = (ImageView)findViewById(R.id.ivMidThree2211);
-        ivMidThree2222 = (ImageView)findViewById(R.id.ivMidThree2222);
-        ivMidThree2233 = (ImageView)findViewById(R.id.ivMidThree2233);
+        ivMidThree2211 = (ImageView) findViewById(R.id.ivMidThree2211);
+        ivMidThree2222 = (ImageView) findViewById(R.id.ivMidThree2222);
+        ivMidThree2233 = (ImageView) findViewById(R.id.ivMidThree2233);
 
-        ivMidThree3311 = (ImageView)findViewById(R.id.ivMidThree3311);
-        ivMidThree3322 = (ImageView)findViewById(R.id.ivMidThree3322);
-        ivMidThree3333 = (ImageView)findViewById(R.id.ivMidThree3333);
+        ivMidThree3311 = (ImageView) findViewById(R.id.ivMidThree3311);
+        ivMidThree3322 = (ImageView) findViewById(R.id.ivMidThree3322);
+        ivMidThree3333 = (ImageView) findViewById(R.id.ivMidThree3333);
 
-        ivMidThree4411 = (ImageView)findViewById(R.id.ivMidThree4411);
-        ivMidThree4422 = (ImageView)findViewById(R.id.ivMidThree4422);
-        ivMidThree4433 = (ImageView)findViewById(R.id.ivMidThree4433);
+        ivMidThree4411 = (ImageView) findViewById(R.id.ivMidThree4411);
+        ivMidThree4422 = (ImageView) findViewById(R.id.ivMidThree4422);
+        ivMidThree4433 = (ImageView) findViewById(R.id.ivMidThree4433);
 
-        ivMidThree5511 = (ImageView)findViewById(R.id.ivMidThree5511);
-        ivMidThree5522 = (ImageView)findViewById(R.id.ivMidThree5522);
-        ivMidThree5533 = (ImageView)findViewById(R.id.ivMidThree5533);
+        ivMidThree5511 = (ImageView) findViewById(R.id.ivMidThree5511);
+        ivMidThree5522 = (ImageView) findViewById(R.id.ivMidThree5522);
+        ivMidThree5533 = (ImageView) findViewById(R.id.ivMidThree5533);
 
-        ivMid6611 = (ImageView)findViewById(R.id.ivMid6611);
-        ivMid6622 = (ImageView)findViewById(R.id.ivMid6622);
+        ivMid6611 = (ImageView) findViewById(R.id.ivMid6611);
+        ivMid6622 = (ImageView) findViewById(R.id.ivMid6622);
 
-        ivStop1111 = (ImageView)findViewById(R.id.ivStop1111);
+        ivStop1111 = (ImageView) findViewById(R.id.ivStop1111);
         tvStop1111 = (TextView) findViewById(R.id.tvStop1111);
 
-        tvRightTwo1111 = (TextView)findViewById(R.id.tvRightTwo1111);
+        tvRightTwo1111 = (TextView) findViewById(R.id.tvRightTwo1111);
         tvRightTwo1111.setOnClickListener(this);
 
-        ivDown11Up = (ImageView)findViewById(R.id.ivDown11Up);
-        ivDown11Down = (ImageView)findViewById(R.id.ivDown11Down);
-        tvDown11 = (TextView)findViewById(R.id.tvDown11);
+        ivDown11Up = (ImageView) findViewById(R.id.ivDown11Up);
+        ivDown11Down = (ImageView) findViewById(R.id.ivDown11Down);
+        tvDown11 = (TextView) findViewById(R.id.tvDown11);
 
-        ivDown22Up = (ImageView)findViewById(R.id.ivDown22Up);
-        ivDown22Down = (ImageView)findViewById(R.id.ivDown22Down);
-        tvDown22 = (TextView)findViewById(R.id.tvDown22);
+        ivDown22Up = (ImageView) findViewById(R.id.ivDown22Up);
+        ivDown22Down = (ImageView) findViewById(R.id.ivDown22Down);
+        tvDown22 = (TextView) findViewById(R.id.tvDown22);
 
-        ivDown33Up = (ImageView)findViewById(R.id.ivDown33Up);
-        ivDown33Down = (ImageView)findViewById(R.id.ivDown33Down);
-        tvDown33 = (TextView)findViewById(R.id.tvDown33);
+        ivDown33Up = (ImageView) findViewById(R.id.ivDown33Up);
+        ivDown33Down = (ImageView) findViewById(R.id.ivDown33Down);
+        tvDown33 = (TextView) findViewById(R.id.tvDown33);
 
-        ivDown44Up = (ImageView)findViewById(R.id.ivDown44Up);
-        ivDown44Down = (ImageView)findViewById(R.id.ivDown44Down);
-        tvDown44 = (TextView)findViewById(R.id.tvDown44);
+        ivDown44Up = (ImageView) findViewById(R.id.ivDown44Up);
+        ivDown44Down = (ImageView) findViewById(R.id.ivDown44Down);
+        tvDown44 = (TextView) findViewById(R.id.tvDown44);
 
-        ivDown55Up = (ImageView)findViewById(R.id.ivDown55Up);
-        ivDown55Down = (ImageView)findViewById(R.id.ivDown55Down);
-        tvDown55 = (TextView)findViewById(R.id.tvDown55);
+        ivDown55Up = (ImageView) findViewById(R.id.ivDown55Up);
+        ivDown55Down = (ImageView) findViewById(R.id.ivDown55Down);
+        tvDown55 = (TextView) findViewById(R.id.tvDown55);
 
-        ivDown66Up = (ImageView)findViewById(R.id.ivDown66Up);
-        ivDown66Down = (ImageView)findViewById(R.id.ivDown66Down);
-        tvDown66 = (TextView)findViewById(R.id.tvDown66);
+        ivDown66Up = (ImageView) findViewById(R.id.ivDown66Up);
+        ivDown66Down = (ImageView) findViewById(R.id.ivDown66Down);
+        tvDown66 = (TextView) findViewById(R.id.tvDown66);
 
-        ivDown77Up = (ImageView)findViewById(R.id.ivDown77Up);
-        ivDown77Down = (ImageView)findViewById(R.id.ivDown77Down);
-        tvDown77 = (TextView)findViewById(R.id.tvDown77);
+        ivDown77Up = (ImageView) findViewById(R.id.ivDown77Up);
+        ivDown77Down = (ImageView) findViewById(R.id.ivDown77Down);
+        tvDown77 = (TextView) findViewById(R.id.tvDown77);
 
-        noSignalTest = (LinearLayout)findViewById(R.id.noSignalTest);
-        haveSignalTest = (LinearLayout)findViewById(R.id.haveSignalTest);
+        noSignalTest = (LinearLayout) findViewById(R.id.noSignalTest);
+        haveSignalTest = (LinearLayout) findViewById(R.id.haveSignalTest);
 
-        lowBatteryTest = (LinearLayout)findViewById(R.id.lowBatteryLayoutTest);
-        haveBatteryTest = (LinearLayout)findViewById(R.id.haveBatteryLayoutTest);
+        lowBatteryTest = (LinearLayout) findViewById(R.id.lowBatteryLayoutTest);
+        haveBatteryTest = (LinearLayout) findViewById(R.id.haveBatteryLayoutTest);
 
-        tvBatteryTest1 = (TextView)findViewById(R.id.tvBatteryTest1);
-        tvBatteryTest2 = (TextView)findViewById(R.id.tvBatteryTest2);
-        tvBatteryTest3 = (TextView)findViewById(R.id.tvBatteryTest3);
-        tvBatteryTest4 = (TextView)findViewById(R.id.tvBatteryTest4);
+        tvBatteryTest1 = (TextView) findViewById(R.id.tvBatteryTest1);
+        tvBatteryTest2 = (TextView) findViewById(R.id.tvBatteryTest2);
+        tvBatteryTest3 = (TextView) findViewById(R.id.tvBatteryTest3);
+        tvBatteryTest4 = (TextView) findViewById(R.id.tvBatteryTest4);
 
-        tvStartStaTest = (TextView)findViewById(R.id.tvStartStaTest);
-        signalStrengthTest = (TextView)findViewById(R.id.signalStrengthTest);
+        tvStartStaTest = (TextView) findViewById(R.id.tvStartStaTest);
+        signalStrengthTest = (TextView) findViewById(R.id.signalStrengthTest);
 
-        signalStrengthLayoutTest = (FrameLayout)findViewById(R.id.signalStrengthLayoutTest);
-        signalStrengthLayout1Test = (FrameLayout)findViewById(R.id.signalStrengthLayout1Test);
+        signalStrengthLayoutTest = (FrameLayout) findViewById(R.id.signalStrengthLayoutTest);
+        signalStrengthLayout1Test = (FrameLayout) findViewById(R.id.signalStrengthLayout1Test);
         //测试界面 end
 
     }
 
     /**
      * 初始化地图信息
+     *
      * @param
      */
-    private void initCameraInfo(){
+    private void initCameraInfo() {
         //摄像头控件
-        cameraView = (CameraSurfaceView)findViewById(R.id.cameraView);
+        cameraView = (CameraSurfaceView) findViewById(R.id.cameraView);
         cameraView.setVisibility(View.VISIBLE);
 
     }
 
     /**
      * 初始化串口
+     *
      * @param
      */
-    private void initSerial(){
+    private void initSerial() {
 
         try {
             serialhelp = new SerialHelper(mHandler, getApplicationContext());
             serialhelp.open();
         } catch (Exception e) {
-            LogUtil.d("initSerial","============打开串口异常==============：" + e.getMessage());
+            LogUtil.d("initSerial", "============打开串口异常==============：" + e.getMessage());
 
         }
 
     }
 
 
-    private void changePage(int flag){
+    private void changePage(int flag) {
         int val;
-       // CacheData.setMsg_info("=======changePage====flag====flag========="+flag,1);
-        if((flag&0x1) == 0x1) {
-            if(change_page_old == 0){
+        // CacheData.setMsg_info("=======changePage====flag====flag========="+flag,1);
+        if ((flag & 0x1) == 0x1) {
+            if (change_page_old == 0) {
 //                SharedPreferences share = getSharedPreferences("Acitivity", Context.MODE_WORLD_READABLE);
 //                int page = share.getInt("page", 0);
-                if (mainLLayout.getVisibility() == View.VISIBLE){  //0表示内容显示界面， 1：表示测试诊断界面
-                   // page = 1;
+                if (mainLLayout.getVisibility() == View.VISIBLE) {  //0表示内容显示界面， 1：表示测试诊断界面
+                    // page = 1;
                     mainLLayout.setVisibility(View.GONE);
                     testLLayout.setVisibility(View.VISIBLE);
-                }else {
-                   // page = 0;
+                } else {
+                    // page = 0;
                     mainLLayout.setVisibility(View.VISIBLE);
                     testLLayout.setVisibility(View.GONE);
                 }
@@ -697,16 +687,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                editor.commit();
             }
             change_page_old = 1;
-        }else{
+        } else {
             change_page_old = 0;
         }
 
     }
 
 
-
     /**
      * 布局中所有点击事件处理
+     *
      * @param view
      */
     @Override
@@ -726,26 +716,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                    break;
 //                }
 
-                case R.id.tvRightTwo1111:{
+                case R.id.tvRightTwo1111: {
                     //弹出调试信息显示框
-                    if(messageShowFragment == null){
+                    if (messageShowFragment == null) {
                         messageShowFragment = new MessageShowFragment();
                     }
 
-                    if(!messageShowFragment.isAdded() && !messageShowFragment.isVisible()&& !messageShowFragment.isRemoving()){
+                    if (!messageShowFragment.isAdded() && !messageShowFragment.isVisible() && !messageShowFragment.isRemoving()) {
                         messageShowFragment.show(getSupportFragmentManager(), "messageLogId");
                     }
                     break;
                 }
 
-                case R.id.signalStrengthLayout:{
+                case R.id.signalStrengthLayout: {
 
                     //弹出调试信息显示框
-                    if(messageShowFragment == null){
+                    if (messageShowFragment == null) {
                         messageShowFragment = new MessageShowFragment();
                     }
 
-                    if(!messageShowFragment.isAdded() && !messageShowFragment.isVisible()&& !messageShowFragment.isRemoving()){
+                    if (!messageShowFragment.isAdded() && !messageShowFragment.isVisible() && !messageShowFragment.isRemoving()) {
                         messageShowFragment.show(getSupportFragmentManager(), "messageLogId");
                     }
                     //进入文件系统目录
@@ -755,13 +745,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
 
-                case R.id.waterLLayout:{
+                case R.id.waterLLayout: {
                     //进入文件系统目录
                     dealPasswordValidate(IConstant.SOURCE_SETTING);
                     break;
                 }
 
-                case R.id.WaterFlow:{
+                case R.id.WaterFlow: {
                     //进入文件系统目录
                     if (mainLLayout.getVisibility() == View.VISIBLE) {  //0表示内容显示界面， 1：表示测试诊断界面
                         //    page = 1;
@@ -776,25 +766,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
 
 
-
             }
 
-        }catch (Exception e) {
+        } catch (Exception e) {
 
         }
     }
 
     /**
-     *
      * 跳转到密码输入框，验证通过后，做相应的处理
-     *
      */
-    private void dealPasswordValidate(final int source){
-        System.arraycopy(mHints,1,mHints,0,mHints.length-1);
-        mHints[mHints.length-1] = SystemClock.uptimeMillis();
-        if(SystemClock.uptimeMillis()-mHints[0]<=500){
+    private void dealPasswordValidate(final int source) {
+        System.arraycopy(mHints, 1, mHints, 0, mHints.length - 1);
+        mHints[mHints.length - 1] = SystemClock.uptimeMillis();
+        if (SystemClock.uptimeMillis() - mHints[0] <= 500) {
 
-            if(passwordInputFragment == null){
+            if (passwordInputFragment == null) {
                 passwordInputFragment = new PasswordInputFragment();
             }
 
@@ -803,35 +790,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             passwordInputFragment.setFunCallback(new IFunCallback() {
                 @Override
                 public void onSuccess(Object obj) {
-                    final int source = (int)obj;
+                    final int source = (int) obj;
                     String content = "";
-                    if(source==IConstant.SOURCE_SETTING){
-                        content = "当前安装包的版本号：" + CacheData.versioCode_current + "当前安装包的version_code：" + CacheData.versionName_current +"，您确定要进设置吗？";
-                       // content = "总测试正常次数为：" + all_num  + "总测试异常次数为：" +  error_num;
-                    }else if(source==IConstant.SOURCE_ES_FILEMANAGER){
-                        content = "当前安装包的版本号：" + CacheData.versioCode_current + "当前安装包的version_code：" + CacheData.versionName_current +"，您确定要进ES文件管理器吗？";
-                    }else if(source==IConstant.SOURCE_QUERY_LOG){
-                        if(messageShowFragment == null){
+                    if (source == IConstant.SOURCE_SETTING) {
+                        content = "当前安装包的版本号：" + CacheData.versioCode_current + "当前安装包的version_code：" + CacheData.versionName_current + "，您确定要进设置吗？";
+                        // content = "总测试正常次数为：" + all_num  + "总测试异常次数为：" +  error_num;
+                    } else if (source == IConstant.SOURCE_ES_FILEMANAGER) {
+                        content = "当前安装包的版本号：" + CacheData.versioCode_current + "当前安装包的version_code：" + CacheData.versionName_current + "，您确定要进ES文件管理器吗？";
+                    } else if (source == IConstant.SOURCE_QUERY_LOG) {
+                        if (messageShowFragment == null) {
                             messageShowFragment = new MessageShowFragment();
                         }
 
-                        if(!messageShowFragment.isAdded() && !messageShowFragment.isVisible()&& !messageShowFragment.isRemoving()){
+                        if (!messageShowFragment.isAdded() && !messageShowFragment.isVisible() && !messageShowFragment.isRemoving()) {
                             messageShowFragment.show(getSupportFragmentManager(), "messageLogId");
                         }
                         return;
-                    }else if(source==IConstant.SOURCE_U_UPGRADE){
+                    } else if (source == IConstant.SOURCE_U_UPGRADE) {
                         // if(FileUtil.getAllExternalSdcardPath()){
                         //发送安装广播
                         Intent intent = new Intent();
                         intent.setAction("com.unisound.unicar.install.action");
-                        intent.putExtra("apk","/storage/usb0/app-debug.apk");    //  /storage/usb0/app-debug.apk
+                        intent.putExtra("apk", "/storage/usb0/app-debug.apk");    //  /storage/usb0/app-debug.apk
                         sendBroadcast(intent);
 //                        }else{
 //                            Toast.makeText(getApplicationContext(), "没有检测到连接的U盘，连接U盘到检测到大概需要15秒！", Toast.LENGTH_SHORT).show();
 //                        }
 
 
-                    }else if(source==IConstant.SOURCE_CLEAR_RECORD_DEVICE_DATA){
+                    } else if (source == IConstant.SOURCE_CLEAR_RECORD_DEVICE_DATA) {
 
                         //根据上传的状态显示对应的信息
 //                        serialhelp.deleteRecordDate();
@@ -840,29 +827,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         return;
                     }
 
-                    final AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
+                    final AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
                     dialog.setTitle("提示");
                     dialog.setMessage(content);
-                    dialog.setPositiveButton("确认",new DialogInterface.OnClickListener(){
-                        public  void onClick(DialogInterface dialog,int which)
-                        {
+                    dialog.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
 
                             //MainActivity.this.finish();
                             //System.exit(0);
 
-                            try{
+                            try {
                                 Intent intent = new Intent();
-                                if(source==IConstant.SOURCE_SETTING){
+                                if (source == IConstant.SOURCE_SETTING) {
                                     intent.setClassName("com.android.settings", "com.android.settings.Settings");
                                     startActivity(intent);
 //                                     MainActivity.this.finish();
 //                                     System.exit(0);
-                                }else if(source==IConstant.SOURCE_ES_FILEMANAGER){
+                                } else if (source == IConstant.SOURCE_ES_FILEMANAGER) {
                                     intent.setClassName("com.estrongs.android.pop",
                                             "com.estrongs.android.pop.view.FileExplorerActivity");
                                     startActivity(intent);
 
-                                }else if(source==IConstant.SOURCE_U_UPGRADE){
+                                } else if (source == IConstant.SOURCE_U_UPGRADE) {
                                     //  String path = FileUtil.getExtSDCard();
 //                                    String path = "/storage/usb";   //  /mnt/sdcard  /mnt/usb0
 //                                    if(TextUtils.isEmpty(path)){
@@ -882,16 +868,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     startActivity(intent);
                                 }
 
-                            }catch (Exception e){
-                                LogUtil.e(TAG,"=================dealPasswordValidate=====================>"+e.getMessage());
+                            } catch (Exception e) {
+                                LogUtil.e(TAG, "=================dealPasswordValidate=====================>" + e.getMessage());
 
                             }
 
                         }
                     });
-                    dialog.setNegativeButton("取消",new DialogInterface.OnClickListener(){
-                        public  void onClick(DialogInterface dialog,int which)
-                        {
+                    dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
 
                         }
                     });
@@ -899,14 +884,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             });
 
-            if(!passwordInputFragment.isAdded() && !passwordInputFragment.isVisible()
-                    && !passwordInputFragment.isRemoving()){
+            if (!passwordInputFragment.isAdded() && !passwordInputFragment.isVisible()
+                    && !passwordInputFragment.isRemoving()) {
                 passwordInputFragment.show(getSupportFragmentManager(), "");
             }
 
         }
     }
-
 
 
     class MyHandler extends Handler {
@@ -923,13 +907,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             }
 
-            try{
+            try {
 
                 switch (msg.what) {
 
                     //综合信息上传
                     case IConstant.COMMAND_MULTIPLE_POSTION_INFO: {
-                        byte [] content = msg.getData().getByteArray("content");
+                        byte[] content = msg.getData().getByteArray("content");
                         MultipleStateInfo multipleStateInfo = (MultipleStateInfo) msg.obj;
                         //根据上传的状态显示对应的信息
                         displayMultipleState(multipleStateInfo);
@@ -947,8 +931,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
 
                 }
-            }catch (Exception e){
-                LogUtil.e(TAG,"===================handleMessage===========================>"+e.getMessage());
+            } catch (Exception e) {
+                LogUtil.e(TAG, "===================handleMessage===========================>" + e.getMessage());
                 e.printStackTrace();
             }
 
@@ -958,24 +942,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     /**
-     *
      * 处理诊断测试界面数据
-     * @param content
      *
+     * @param content
      */
-    private void dealTestData(byte [] content){
+    private void dealTestData(byte[] content) {
         //CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===content=====>"+ NumberBytes.byteArrayToHexStr(content) ,0);
-        if(content.length > 52){
+        if (content.length > 52) {
             temp = content[40];
             String ykqd = "" + ((temp) & 0x1);       //遥控启动  0..1
-            String ykzl = "" + ((temp>>1) & 0x1) + ((temp>>2) & 0x1);    //遥控直流  //遥控喷雾
-            String yksps = "" + ((temp>>3) & 0x1)  + ((temp>>4) & 0x1);    //遥控水炮上  遥控水炮下 测试
+            String ykzl = "" + ((temp >> 1) & 0x1) + ((temp >> 2) & 0x1);    //遥控直流  //遥控喷雾
+            String yksps = "" + ((temp >> 3) & 0x1) + ((temp >> 4) & 0x1);    //遥控水炮上  遥控水炮下 测试
 //            String yksps_3 = "" + ((temp>>3) & 0x1);    //遥控水炮上
 //            String yksps_4 = "" + ((temp>>4) & 0x1);    // 遥控水炮下 测试
-            String ykspz = "" + ((temp>>5) & 0x1) + ((temp>>6) & 0x1);    //遥控水炮左  遥控水炮右
-            String xunx_lab = "" + ((temp>>7) & 0x1);    //讯响/喇叭
+            String ykspz = "" + ((temp >> 5) & 0x1) + ((temp >> 6) & 0x1);    //遥控水炮左  遥控水炮右
+            String xunx_lab = "" + ((temp >> 7) & 0x1);    //讯响/喇叭
 //            CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===content=====>"+ temp ,0);
-          //  CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===yksps=====>" + yksps ,0);
+            //  CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===yksps=====>" + yksps ,0);
 //            CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===ykqd=====>" + yksps_4 ,0);
 
 //            if(IConstant.STATE_1.equals(ykqd)){
@@ -984,83 +967,83 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                ivLeft1.setImageResource(R.drawable.ic_round_white);
 //            }
 
-           // CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===ykqd=====>" + ykqd ,0);
-           // CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===ykzl=====>" + ykzl ,0);
+            // CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===ykqd=====>" + ykqd ,0);
+            // CacheData.setMsg_info("======MainActivity====dealTestData======收到数据===ykzl=====>" + ykzl ,0);
 
-            if(IConstant.STATE_10.equals(ykzl)){   //遥控直流
+            if (IConstant.STATE_10.equals(ykzl)) {   //遥控直流
                 ivMidThree3311.setImageResource(R.drawable.ic_3_up_red);
                 ivMidThree3322.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree3333.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_00.equals(ykzl)){
+            } else if (IConstant.STATE_00.equals(ykzl)) {
                 ivMidThree3311.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree3322.setImageResource(R.drawable.ic_3_mi_red);
                 ivMidThree3333.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_01.equals(ykzl)){   //遥控喷雾
+            } else if (IConstant.STATE_01.equals(ykzl)) {   //遥控喷雾
                 ivMidThree3311.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree3322.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree3333.setImageResource(R.drawable.ic_3_do_red);
             }
 
-            if(IConstant.STATE_10.equals(ykspz)){    //遥控水炮左
+            if (IConstant.STATE_10.equals(ykspz)) {    //遥控水炮左
                 ivMidThree4411.setImageResource(R.drawable.ic_3_up_red);
                 ivMidThree4422.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree4433.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_00.equals(ykspz)){
+            } else if (IConstant.STATE_00.equals(ykspz)) {
                 ivMidThree4411.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree4422.setImageResource(R.drawable.ic_3_mi_red);
                 ivMidThree4433.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_01.equals(ykspz)){    //遥控水炮右
+            } else if (IConstant.STATE_01.equals(ykspz)) {    //遥控水炮右
                 ivMidThree4411.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree4422.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree4433.setImageResource(R.drawable.ic_3_do_red);
             }
 
-            if(IConstant.STATE_10.equals(yksps)){    //遥控水炮上
+            if (IConstant.STATE_10.equals(yksps)) {    //遥控水炮上
                 ivMidThree5511.setImageResource(R.drawable.ic_3_up_red);
                 ivMidThree5522.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree5533.setImageResource(R.drawable.ic_3_do_wh);
-               // CacheData.setMsg_info("======MainActivity====dealTestData===遥控水炮上====>" + yksps ,0);
-            }else if(IConstant.STATE_00.equals(yksps)){
-               // CacheData.setMsg_info("======MainActivity====dealTestData====遥控水炮中间====>" + yksps ,0);
+                // CacheData.setMsg_info("======MainActivity====dealTestData===遥控水炮上====>" + yksps ,0);
+            } else if (IConstant.STATE_00.equals(yksps)) {
+                // CacheData.setMsg_info("======MainActivity====dealTestData====遥控水炮中间====>" + yksps ,0);
                 ivMidThree5511.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree5522.setImageResource(R.drawable.ic_3_mi_red);
                 ivMidThree5533.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_01.equals(yksps)){    //遥控水炮下
-               // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控水炮下====>" + yksps ,0);
+            } else if (IConstant.STATE_01.equals(yksps)) {    //遥控水炮下
+                // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控水炮下====>" + yksps ,0);
                 ivMidThree5511.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree5522.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree5533.setImageResource(R.drawable.ic_3_do_red);
             }
 
 
-            if(IConstant.STATE_1.equals(xunx_lab)){
+            if (IConstant.STATE_1.equals(xunx_lab)) {
                 ivRight4.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivRight4.setImageResource(R.drawable.ic_round_white);
             }
 
             temp = content[41];
             String xzsd = "" + ((temp) & 0x1);         //选择手动  0..1
-            String bjsn = "" + ((temp>>1) & 0x1);      //臂架使能
-            String zdbz = "" + ((temp>>2) & 0x1);      //自动展臂
-            String zdsb = "" + ((temp>>3) & 0x1);      //自动收臂   //待测
-            String by_414_415 = "" + ((temp>>4) & 0x1) + ((temp>>5) & 0x1);  //备用
+            String bjsn = "" + ((temp >> 1) & 0x1);      //臂架使能
+            String zdbz = "" + ((temp >> 2) & 0x1);      //自动展臂
+            String zdsb = "" + ((temp >> 3) & 0x1);      //自动收臂   //待测
+            String by_414_415 = "" + ((temp >> 4) & 0x1) + ((temp >> 5) & 0x1);  //备用
             //String by_415 = "" + ((temp>>5) & 0x1);    //备用
-            String by_416 = "" + ((temp>>6) & 0x1);     //末端供电（备用）
-            String kd = "" + ((temp>>7) & 0x1);         //快档
+            String by_416 = "" + ((temp >> 6) & 0x1);     //末端供电（备用）
+            String kd = "" + ((temp >> 7) & 0x1);         //快档
 
-            if(IConstant.STATE_1.equals(xzsd)){      // 选择手动  0..1
+            if (IConstant.STATE_1.equals(xzsd)) {      // 选择手动  0..1
                 ivLeftTwo1211.setImageResource(R.drawable.ic_22_up_red);
                 ivLeftTwo1222.setImageResource(R.drawable.ic_22_do_wh);
-            }else{
+            } else {
                 ivLeftTwo1211.setImageResource(R.drawable.ic_22_up_wh);
                 ivLeftTwo1222.setImageResource(R.drawable.ic_22_do_red);
             }
 
-            if(IConstant.STATE_1.equals(bjsn)){     //臂架使能
+            if (IConstant.STATE_1.equals(bjsn)) {     //臂架使能
                 ivLeftTwo1111.setImageResource(R.drawable.ic_22_up_red);
                 ivLeftTwo1122.setImageResource(R.drawable.ic_22_do_wh);
-            }else{
+            } else {
                 ivLeftTwo1111.setImageResource(R.drawable.ic_22_up_wh);
                 ivLeftTwo1122.setImageResource(R.drawable.ic_22_do_red);
             }
@@ -1078,10 +1061,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 
 
-            if(IConstant.STATE_1.equals(kd)){
+            if (IConstant.STATE_1.equals(kd)) {
                 ivLeftTwo2111.setImageResource(R.drawable.ic_22_up_red);
                 ivLeftTwo2122.setImageResource(R.drawable.ic_22_do_wh);
-            }else{
+            } else {
                 ivLeftTwo2111.setImageResource(R.drawable.ic_22_up_wh);
                 ivLeftTwo2122.setImageResource(R.drawable.ic_22_do_red);
             }
@@ -1108,276 +1091,274 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
             temp = content[42];
-            String spzb = "" + ((temp) & 0x1) + ((temp>>1) & 0x1);    //水炮自摆  0..1  水炮复位
-            String xcpl = "" + ((temp>>2) & 0x1);    //下车喷淋（备用）
-            String hzdz = "" + ((temp>>3) & 0x1);    //回转对中
+            String spzb = "" + ((temp) & 0x1) + ((temp >> 1) & 0x1);    //水炮自摆  0..1  水炮复位
+            String xcpl = "" + ((temp >> 2) & 0x1);    //下车喷淋（备用）
+            String hzdz = "" + ((temp >> 3) & 0x1);    //回转对中
 
-            String z3by = "" + ((temp>>4) & 0x1);    //左3备用
-            String z4by = "" + ((temp>>5) & 0x1);    //左4备用
-            String y1by = "" + ((temp>>6) & 0x1);    //右1备用
-            String ykxk = "" + ((temp>>7) & 0x1);    //遥控/线控
+            String z3by = "" + ((temp >> 4) & 0x1);    //左3备用
+            String z4by = "" + ((temp >> 5) & 0x1);    //左4备用
+            String y1by = "" + ((temp >> 6) & 0x1);    //右1备用
+            String ykxk = "" + ((temp >> 7) & 0x1);    //遥控/线控
 
-            if(IConstant.STATE_10.equals(spzb)){   //水炮自摆
+            if (IConstant.STATE_10.equals(spzb)) {   //水炮自摆
                 ivMidThree2211.setImageResource(R.drawable.ic_3_up_red);
                 ivMidThree2222.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree2233.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_00.equals(spzb)){
+            } else if (IConstant.STATE_00.equals(spzb)) {
                 ivMidThree2211.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree2222.setImageResource(R.drawable.ic_3_mi_red);
                 ivMidThree2233.setImageResource(R.drawable.ic_3_do_wh);
-            }else if(IConstant.STATE_01.equals(spzb)){   //水炮复位
+            } else if (IConstant.STATE_01.equals(spzb)) {   //水炮复位
                 ivMidThree2211.setImageResource(R.drawable.ic_3_up_wh);
                 ivMidThree2222.setImageResource(R.drawable.ic_3_mi_wh);
                 ivMidThree2233.setImageResource(R.drawable.ic_3_do_red);
             }
 
-            if(IConstant.STATE_1.equals(xcpl)){
+            if (IConstant.STATE_1.equals(xcpl)) {
                 ivLeftTwo3111.setImageResource(R.drawable.ic_22_up_red);
                 ivLeftTwo3122.setImageResource(R.drawable.ic_22_do_wh);
-            }else{
+            } else {
                 ivLeftTwo3111.setImageResource(R.drawable.ic_22_up_wh);
                 ivLeftTwo3122.setImageResource(R.drawable.ic_22_do_red);
             }
 
-            if(IConstant.STATE_1.equals(hzdz)){    //回转对中
+            if (IConstant.STATE_1.equals(hzdz)) {    //回转对中
                 ivLeft2.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivLeft2.setImageResource(R.drawable.ic_round_white);
             }
 
-            if(IConstant.STATE_1.equals(z3by)){
-               ivLeft3.setImageResource(R.drawable.ic_round_red);
-            }else{
+            if (IConstant.STATE_1.equals(z3by)) {
+                ivLeft3.setImageResource(R.drawable.ic_round_red);
+            } else {
                 ivLeft3.setImageResource(R.drawable.ic_round_white);
             }
 
-            if(IConstant.STATE_1.equals(z4by)){
+            if (IConstant.STATE_1.equals(z4by)) {
                 ivLeft4.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivLeft4.setImageResource(R.drawable.ic_round_white);
             }
 
-            if(IConstant.STATE_1.equals(y1by)){
+            if (IConstant.STATE_1.equals(y1by)) {
                 ivRight1.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivRight1.setImageResource(R.drawable.ic_round_white);
             }
 
-           // temp = content[43];  不需要
-           // String jtzt = "" + ((temp) & 0x1);       //jtzt
-           // String spfw = "" + ((temp>>1) & 0x1);    //jtzt
-           // String hzdz = "" + ((temp>>3) & 0x1);    //jtzt
+            // temp = content[43];  不需要
+            // String jtzt = "" + ((temp) & 0x1);       //jtzt
+            // String spfw = "" + ((temp>>1) & 0x1);    //jtzt
+            // String hzdz = "" + ((temp>>3) & 0x1);    //jtzt
 
             temp = content[43];
             String fdjqd = "" + ((temp) & 0x1);         //发动机启动
-            String sbdz = "" + ((temp>>1) & 0x1);      //任意手柄动作
-            String hds = "" + ((temp>>2) & 0x1);      // 回怠速（备用）
-            String tjzm = "" + ((temp>>3) & 0x1);      //托架照明（备用） 遥控器照明
-            String spzm = "" + ((temp>>4) & 0x1);    //水炮照明
-            String by_35_5 = "" + ((temp>>5) & 0x1);    //备用 (使用)
-            String sbqd = "" + ((temp>>6) & 0x1);    //水泵启动
-            String bjpl = "" + ((temp>>7) & 0x1);        //臂架喷淋
+            String sbdz = "" + ((temp >> 1) & 0x1);      //任意手柄动作
+            String hds = "" + ((temp >> 2) & 0x1);      // 回怠速（备用）
+            String tjzm = "" + ((temp >> 3) & 0x1);      //托架照明（备用） 遥控器照明
+            String spzm = "" + ((temp >> 4) & 0x1);    //水炮照明
+            String by_35_5 = "" + ((temp >> 5) & 0x1);    //备用 (使用)
+            String sbqd = "" + ((temp >> 6) & 0x1);    //水泵启动
+            String bjpl = "" + ((temp >> 7) & 0x1);        //臂架喷淋
 
-            if(IConstant.STATE_1.equals(spzm)){
+            if (IConstant.STATE_1.equals(spzm)) {
                 ivRight2.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivRight2.setImageResource(R.drawable.ic_round_white);
             }
 
-            if(IConstant.STATE_1.equals(by_35_5)){    //备用     //测试
+            if (IConstant.STATE_1.equals(by_35_5)) {    //备用     //测试
                 ivLeftThree2211.setImageResource(R.drawable.ic_3_up_red);
                 ivLeftThree2222.setImageResource(R.drawable.ic_3_mi_wh);
                 ivLeftThree2233.setImageResource(R.drawable.ic_3_do_wh);
-            }else{
+            } else {
                 ivLeftThree2211.setImageResource(R.drawable.ic_3_up_wh);
                 ivLeftThree2222.setImageResource(R.drawable.ic_3_mi_red);
                 ivLeftThree2233.setImageResource(R.drawable.ic_3_do_wh);
             }
 
-            if(IConstant.STATE_1.equals(sbqd)){    //水泵启动
+            if (IConstant.STATE_1.equals(sbqd)) {    //水泵启动
                 ivMid6611.setImageResource(R.drawable.ic_22_up_red);
                 ivMid6622.setImageResource(R.drawable.ic_22_do_wh);
-            }else{                                  //水泵停止
+            } else {                                  //水泵停止
                 ivMid6611.setImageResource(R.drawable.ic_22_up_wh);
                 ivMid6622.setImageResource(R.drawable.ic_22_do_red);
             }
 
 
-            if(IConstant.STATE_1.equals(bjpl)){    //臂架喷淋
+            if (IConstant.STATE_1.equals(bjpl)) {    //臂架喷淋
                 ivMid1111.setImageResource(R.drawable.ic_22_up_red);
                 ivMid1122.setImageResource(R.drawable.ic_22_do_wh);
-            }else{
+            } else {
                 ivMid1111.setImageResource(R.drawable.ic_22_up_wh);
                 ivMid1122.setImageResource(R.drawable.ic_22_do_red);
             }
 
             //回转手柄信号
-            System.arraycopy(content,44,temp_1,0,1);   //解丹确认
-            int hzsb =  bytes2int(temp_1);
-           // CacheData.setMsg_info("======MainActivity====dealTestData===/回转手柄信号==hzsb==>" + hzsb ,0);
-            if(hzsb==0){
+            System.arraycopy(content, 44, temp_1, 0, 1);   //解丹确认
+            int hzsb = bytes2int(temp_1);
+            // CacheData.setMsg_info("======MainActivity====dealTestData===/回转手柄信号==hzsb==>" + hzsb ,0);
+            if (hzsb == 0) {
                 ivDown11Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown11Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown11.setText("" + hzsb);
-             }else if(hzsb<=127 && hzsb>0){
+            } else if (hzsb <= 127 && hzsb > 0) {
                 ivDown11Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown11Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown11.setText("" + hzsb);
-            }else{
+            } else {
                 ivDown11Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown11Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown11.setText("-" + (256-hzsb));
+                tvDown11.setText("-" + (256 - hzsb));
             }
 
             //一臂手柄信号
-            System.arraycopy(content,45,temp_1,0,1);
+            System.arraycopy(content, 45, temp_1, 0, 1);
             int ybsb = bytes2int(temp_1);
-            if(ybsb==0){
+            if (ybsb == 0) {
                 ivDown22Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown22Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown22.setText("" + ybsb);
-            }else if(ybsb<=127 && ybsb>0){
+            } else if (ybsb <= 127 && ybsb > 0) {
                 ivDown22Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown22Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown22.setText("" + ybsb);
-            }else{
+            } else {
                 ivDown22Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown22Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown22.setText("-" + (256-ybsb));
+                tvDown22.setText("-" + (256 - ybsb));
             }
 
             //二臂手柄信号
-            System.arraycopy(content,46,temp_1,0,1);
-            int ebsb =bytes2int(temp_1);
-            if(ebsb==0){
+            System.arraycopy(content, 46, temp_1, 0, 1);
+            int ebsb = bytes2int(temp_1);
+            if (ebsb == 0) {
                 ivDown33Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown33Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown33.setText("" + ebsb);
-            }else if(ebsb<=127 && ebsb>0){
+            } else if (ebsb <= 127 && ebsb > 0) {
                 ivDown33Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown33Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown33.setText("" + ebsb);
-            }else{
+            } else {
                 ivDown33Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown33Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown33.setText("-" + (256-ebsb));
+                tvDown33.setText("-" + (256 - ebsb));
             }
 
 
             //三臂手柄信号
-            System.arraycopy(content,47,temp_1,0,1);
+            System.arraycopy(content, 47, temp_1, 0, 1);
             int sanbsb = bytes2int(temp_1);
-            if(sanbsb==0){
+            if (sanbsb == 0) {
                 ivDown44Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown44Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown44.setText("" + sanbsb);
-            }else if(sanbsb<=127 && sanbsb>0){
+            } else if (sanbsb <= 127 && sanbsb > 0) {
                 ivDown44Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown44Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown44.setText("" + sanbsb);
-            }else{
+            } else {
                 ivDown44Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown44Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown44.setText("-" + (256-sanbsb));
+                tvDown44.setText("-" + (256 - sanbsb));
             }
 
 
-
             //四臂手柄信号
-            System.arraycopy(content,48,temp_1,0,1);
+            System.arraycopy(content, 48, temp_1, 0, 1);
             int sibsb = bytes2int(temp_1);
 
-            if(sibsb==0){
+            if (sibsb == 0) {
                 ivDown55Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown55Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown55.setText("" + sibsb);
-            }else if(sibsb<=127 && sibsb>0){
+            } else if (sibsb <= 127 && sibsb > 0) {
                 ivDown55Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown55Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown55.setText("" + sibsb);
-            }else{
+            } else {
                 ivDown55Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown55Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown55.setText("-" + (256-sibsb));
+                tvDown55.setText("-" + (256 - sibsb));
             }
 
 
             //五臂手柄信号
-            System.arraycopy(content,49,temp_1,0,1);
+            System.arraycopy(content, 49, temp_1, 0, 1);
             int wubsb = bytes2int(temp_1);
 
-            if(wubsb==0){
+            if (wubsb == 0) {
                 ivDown66Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown66Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown66.setText("" + wubsb);
-            }else if(wubsb<=127 && wubsb>0){
+            } else if (wubsb <= 127 && wubsb > 0) {
                 ivDown66Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown66Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown66.setText("" + wubsb);
-            }else{
+            } else {
                 ivDown66Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown66Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown66.setText("-" + (256-wubsb));
+                tvDown66.setText("-" + (256 - wubsb));
             }
 
 
             //水泵调速信号
-            System.arraycopy(content,50,temp_1,0,1);
+            System.arraycopy(content, 50, temp_1, 0, 1);
             int sbts = bytes2int(temp_1);
             tvRightTwo1111.setText("" + sbts);
 
             //六臂手柄信号
-            System.arraycopy(content,51,temp_1,0,1);
+            System.arraycopy(content, 51, temp_1, 0, 1);
             int liubsb = bytes2int(temp_1);
 
-            if(liubsb==0){
+            if (liubsb == 0) {
                 ivDown77Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown77Down.setImageResource(R.drawable.ic_2_do_wh);
                 tvDown77.setText("" + liubsb);
-            }else if(liubsb<=127 && liubsb>0){
+            } else if (liubsb <= 127 && liubsb > 0) {
                 ivDown77Up.setImageResource(R.drawable.ic_2_up_wh);
                 ivDown77Down.setImageResource(R.drawable.ic_2_do_red);
                 tvDown77.setText("" + liubsb);
-            }else{
+            } else {
                 ivDown77Up.setImageResource(R.drawable.ic_2_up_red);
                 ivDown77Down.setImageResource(R.drawable.ic_2_do_wh);
-                tvDown77.setText("-" + (256-liubsb));
+                tvDown77.setText("-" + (256 - liubsb));
             }
 
 
-           // CacheData.setMsg_info("======MainActivity====dealTestData======六臂手柄信号===liubsb=====>" + liubsb ,0);
-           // CacheData.setMsg_info("======MainActivity====dealTestData======六臂手柄信号===liubsb=====>" + liubsb ,0);
+            // CacheData.setMsg_info("======MainActivity====dealTestData======六臂手柄信号===liubsb=====>" + liubsb ,0);
+            // CacheData.setMsg_info("======MainActivity====dealTestData======六臂手柄信号===liubsb=====>" + liubsb ,0);
 
             //智能手柄信号
-            System.arraycopy(content,52,temp_1,0,1);
+            System.arraycopy(content, 52, temp_1, 0, 1);
             int znsb = bytes2int(temp_1);
 
 
             //发动机熄火
-          //  CacheData.setMsg_info("======MainActivity====dealTestData=====遥控启动按钮== content[53]====>" + content[53] ,0);
+            //  CacheData.setMsg_info("======MainActivity====dealTestData=====遥控启动按钮== content[53]====>" + content[53] ,0);
             temp = content[53];
             String fdjxh = "" + ((temp) & 0x1);           //发动机熄火
-            String ykq_qd = "" + ((temp>>1) & 0x1);      //遥控启动按钮
-            String ykq_zm = "" + ((temp>>2) & 0x1);       // 遥控器照明
+            String ykq_qd = "" + ((temp >> 1) & 0x1);      //遥控启动按钮
+            String ykq_zm = "" + ((temp >> 2) & 0x1);       // 遥控器照明
 
-           // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控启动按钮===ykq_qd=====>" + ykq_qd ,0);
-           // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控器照明===ykq_zm=====>" + ykq_zm ,0);
-            if(IConstant.STATE_1.equals(ykq_qd)){
-               // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控启动按钮===ykq_qd==11111111===>" + ykq_qd ,0);
+            // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控启动按钮===ykq_qd=====>" + ykq_qd ,0);
+            // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控器照明===ykq_zm=====>" + ykq_zm ,0);
+            if (IConstant.STATE_1.equals(ykq_qd)) {
+                // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控启动按钮===ykq_qd==11111111===>" + ykq_qd ,0);
                 ivLeft1.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivLeft1.setImageResource(R.drawable.ic_round_white);
             }
 
-            if(IConstant.STATE_1.equals(ykq_zm)){
-               // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控器照明===ykq_qd==11111111===>" + ykq_qd ,0);
+            if (IConstant.STATE_1.equals(ykq_zm)) {
+                // CacheData.setMsg_info("======MainActivity====dealTestData=====遥控器照明===ykq_qd==11111111===>" + ykq_qd ,0);
                 ivRight3.setImageResource(R.drawable.ic_round_red);
-            }else{
+            } else {
                 ivRight3.setImageResource(R.drawable.ic_round_white);
             }
 
         }
-
 
 
     }
@@ -1385,20 +1366,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 将byte[]转为int形
+     *
      * @param bytes byte[]
      * @return 转换后的字符串
-     *
      */
-    private int bytes2int(byte[] bytes){
+    private int bytes2int(byte[] bytes) {
         return new BigInteger(1, bytes).intValue();// 这里的1代表正数
     }
 
 
     /**
-     *
      * 显示上报的综合信息
-     * @param multipleStateInfo
      *
+     * @param multipleStateInfo
      */
     private void displayMultipleState(MultipleStateInfo multipleStateInfo) throws Exception {
 
@@ -1484,16 +1464,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 
 
-        if(IConstant.TURRET_ANGEL_NEGTIVE.equals(turrent_angel_negtive) )
-        {
+        if (IConstant.TURRET_ANGEL_NEGTIVE.equals(turrent_angel_negtive)) {
             TurretAngle.setText("-" + turret_angle);
-        }else{
+        } else {
             TurretAngle.setText("" + turret_angle);
         }
 
 
         // 倒吸：0 关闭  1开启
-        if(IConstant.DX_FLAG) {
+        if (IConstant.DX_FLAG) {
             tvdxTitle.setVisibility(View.VISIBLE);
             tvDxState.setVisibility(View.VISIBLE);
             if (IConstant.DX_STATE_TURN_OFF.equals(dx_gn_state)) {
@@ -1501,7 +1480,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } else if (IConstant.DX_STATE_TURN_ON.equals(dx_gn_state)) {
                 tvDxState.setText("开启");
             }
-        }else {
+        } else {
             tvdxTitle.setVisibility(View.GONE);
             tvDxState.setVisibility(View.GONE);
         }
@@ -1578,7 +1557,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            cameraTime_flag = 100;
 //        }
 
-        if (cameraFlag7 == 0 ){
+        if (cameraFlag7 == 0) {
 //            CacheData.setMsg_info("===========cameraIndex = 7;=============",1);
             cameraFlag7 = 1;
             CameraInterface.getInstance().doStopCamera();
@@ -1587,7 +1566,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             OpenCameraInfo();
         }
 
-        if (IConstant.WIRELESS_LINK_0.equals(wireless_link_status)){
+        if (IConstant.WIRELESS_LINK_0.equals(wireless_link_status)) {
 //            cameraView.setVisibility(View.GONE);
 //            CameraInterface.getInstance().doStopCamera();
             signalStrengthLayout.setVisibility(FrameLayout.VISIBLE);
@@ -1601,7 +1580,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             noSignalTest.setVisibility(LinearLayout.VISIBLE);
             haveSignalTest.setVisibility(LinearLayout.GONE);
             signalStrengthTest.setVisibility(View.GONE);
-        }else if (IConstant.WIRELESS_LINK_1.equals(wireless_link_status)){
+        } else if (IConstant.WIRELESS_LINK_1.equals(wireless_link_status)) {
 
             signalStrengthLayout.setVisibility(FrameLayout.VISIBLE);
             signalStrengthLayout1.setVisibility(FrameLayout.GONE);
@@ -1614,7 +1593,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             noSignalTest.setVisibility(LinearLayout.GONE);
             haveSignalTest.setVisibility(LinearLayout.VISIBLE);
             signalStrengthTest.setVisibility(View.VISIBLE);
-        } else if (IConstant.WIRELESS_LINK_2.equals(wireless_link_status)){
+        } else if (IConstant.WIRELESS_LINK_2.equals(wireless_link_status)) {
 
             signalStrengthLayout.setVisibility(FrameLayout.GONE);
             signalStrengthLayout1.setVisibility(FrameLayout.VISIBLE);
@@ -1628,23 +1607,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
-        if (IConstant.ARM_SPREAD_1.equals(arm_spread_status) && IConstant.ARM_SHRINK_0.equals(arm_shrink_status)){
+        if (IConstant.ARM_SPREAD_1.equals(arm_spread_status) && IConstant.ARM_SHRINK_0.equals(arm_shrink_status)) {
             ArmSpreadStatus.setText(getString(R.string.arm_spread));
-        }else if (IConstant.ARM_SPREAD_0.equals(arm_spread_status) && IConstant.ARM_SHRINK_1.equals(arm_shrink_status)){
+        } else if (IConstant.ARM_SPREAD_0.equals(arm_spread_status) && IConstant.ARM_SHRINK_1.equals(arm_shrink_status)) {
             ArmSpreadStatus.setText(getString(R.string.arm_shrink));
-        }else {
+        } else {
             ArmSpreadStatus.setText(getString(R.string.arm_none));
         }
 
-        if (IConstant.Turret_Hit_ok.equals(turret_hit_status)){
+        if (IConstant.Turret_Hit_ok.equals(turret_hit_status)) {
             turretHitok.setVisibility(View.VISIBLE);
             turretHitfail.setVisibility(View.GONE);
-        }else if (IConstant.Turret_Hit_fail.equals(turret_hit_status)){
+        } else if (IConstant.Turret_Hit_fail.equals(turret_hit_status)) {
             turretHitok.setVisibility(View.GONE);
             turretHitfail.setVisibility(View.VISIBLE);
         }
 
-        if (IConstant.FOAM_LEVEL_0000.equals(foam_level)){
+        if (IConstant.FOAM_LEVEL_0000.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.INVISIBLE);
@@ -1653,7 +1632,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.INVISIBLE);
             formLevel7.setVisibility(View.INVISIBLE);
             formLevel8.setVisibility(View.INVISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0001.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0001.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.INVISIBLE);
@@ -1662,7 +1641,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.INVISIBLE);
             formLevel7.setVisibility(View.INVISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0010.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0010.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.INVISIBLE);
@@ -1671,7 +1650,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.INVISIBLE);
             formLevel7.setVisibility(View.VISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0011.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0011.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.INVISIBLE);
@@ -1680,7 +1659,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.VISIBLE);
             formLevel7.setVisibility(View.VISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0100.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0100.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.INVISIBLE);
@@ -1689,7 +1668,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.VISIBLE);
             formLevel7.setVisibility(View.VISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0101.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0101.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.INVISIBLE);
@@ -1698,7 +1677,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.VISIBLE);
             formLevel7.setVisibility(View.VISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0110.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0110.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.INVISIBLE);
             formLevel3.setVisibility(View.VISIBLE);
@@ -1707,7 +1686,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.VISIBLE);
             formLevel7.setVisibility(View.VISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_0111.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_0111.equals(foam_level)) {
             formLevel1.setVisibility(View.INVISIBLE);
             formLevel2.setVisibility(View.VISIBLE);
             formLevel3.setVisibility(View.VISIBLE);
@@ -1716,7 +1695,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel6.setVisibility(View.VISIBLE);
             formLevel7.setVisibility(View.VISIBLE);
             formLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.FOAM_LEVEL_1000.equals(foam_level)){
+        } else if (IConstant.FOAM_LEVEL_1000.equals(foam_level)) {
             formLevel1.setVisibility(View.VISIBLE);
             formLevel2.setVisibility(View.VISIBLE);
             formLevel3.setVisibility(View.VISIBLE);
@@ -1727,7 +1706,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             formLevel8.setVisibility(View.VISIBLE);
         }
 
-        if (IConstant.WATER_LEVEL_0000.equals(water_level)){
+        if (IConstant.WATER_LEVEL_0000.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.INVISIBLE);
@@ -1736,7 +1715,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.INVISIBLE);
             waterLevel7.setVisibility(View.INVISIBLE);
             waterLevel8.setVisibility(View.INVISIBLE);
-        }else if(IConstant.WATER_LEVEL_0001.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0001.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.INVISIBLE);
@@ -1745,7 +1724,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.INVISIBLE);
             waterLevel7.setVisibility(View.INVISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_0010.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0010.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.INVISIBLE);
@@ -1754,7 +1733,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.INVISIBLE);
             waterLevel7.setVisibility(View.VISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_0011.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0011.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.INVISIBLE);
@@ -1763,7 +1742,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.VISIBLE);
             waterLevel7.setVisibility(View.VISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_0100.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0100.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.INVISIBLE);
@@ -1772,7 +1751,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.VISIBLE);
             waterLevel7.setVisibility(View.VISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_0101.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0101.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.INVISIBLE);
@@ -1781,7 +1760,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.VISIBLE);
             waterLevel7.setVisibility(View.VISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_0110.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0110.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.INVISIBLE);
             waterLevel3.setVisibility(View.VISIBLE);
@@ -1790,7 +1769,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.VISIBLE);
             waterLevel7.setVisibility(View.VISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_0111.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_0111.equals(water_level)) {
             waterLevel1.setVisibility(View.INVISIBLE);
             waterLevel2.setVisibility(View.VISIBLE);
             waterLevel3.setVisibility(View.VISIBLE);
@@ -1799,7 +1778,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             waterLevel6.setVisibility(View.VISIBLE);
             waterLevel7.setVisibility(View.VISIBLE);
             waterLevel8.setVisibility(View.VISIBLE);
-        }else if(IConstant.WATER_LEVEL_1000.equals(water_level)){
+        } else if (IConstant.WATER_LEVEL_1000.equals(water_level)) {
             waterLevel1.setVisibility(View.VISIBLE);
             waterLevel2.setVisibility(View.VISIBLE);
             waterLevel3.setVisibility(View.VISIBLE);
@@ -1815,7 +1794,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tvStartStaTest.setText(getString(R.string.scram));
             tvStop1111.setText(getString(R.string.scram));
             ivStop1111.setImageResource(R.drawable.ic_jt_use);
-        } else if((remote_ctrl_status & 0x1) == 0x1) {
+        } else if ((remote_ctrl_status & 0x1) == 0x1) {
             RemoteCtrlStatus.setText(getString(R.string.started));
             tvStartStaTest.setText(getString(R.string.started));
             tvStop1111.setText(getString(R.string.shut_stop));
@@ -1828,7 +1807,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 //        CacheData.setMsg_info("===========battery_electricity============="+battery_electricity,1);
 
-        if ((brightness&0x8) == 0x8){
+        if ((brightness & 0x8) == 0x8) {
             lowBattery.setVisibility(LinearLayout.GONE);
             haveBattery.setVisibility(LinearLayout.GONE);
             lowBatteryTest.setVisibility(LinearLayout.GONE);
@@ -1899,14 +1878,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        if (IConstant.WATER_PUMP_START.equals(water_pump_status)){
+        if (IConstant.WATER_PUMP_START.equals(water_pump_status)) {
             WaterPumpStatus.setText(getString(R.string.started));
         } else if (IConstant.WATER_PUMP_STOP.equals(water_pump_status)) {
             WaterPumpStatus.setText(getString(R.string.stop));
         }
 
 
-        if (IConstant.ERR_CODE_0.equals(err_code)){
+        if (IConstant.ERR_CODE_0.equals(err_code)) {
             ErrCode.setText(getString(R.string.err_code_0));
         } else if (IConstant.ERR_CODE_1.equals(err_code)) {
             ErrCode.setText(getString(R.string.err_code_1));
@@ -2004,20 +1983,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ErrCode.setText(getString(R.string.err_code_47));
         } else if (IConstant.ERR_CODE_48.equals(err_code)) {
             ErrCode.setText(getString(R.string.err_code_48));
-        }else if (IConstant.ERR_CODE_49.equals(err_code)) {
+        } else if (IConstant.ERR_CODE_49.equals(err_code)) {
             ErrCode.setText(getString(R.string.err_code_49));
-        }else if (IConstant.ERR_CODE_50.equals(err_code)) {
+        } else if (IConstant.ERR_CODE_50.equals(err_code)) {
             ErrCode.setText(getString(R.string.err_code_50));
-        }else if (IConstant.ERR_CODE_51.equals(err_code)) {
+        } else if (IConstant.ERR_CODE_51.equals(err_code)) {
             ErrCode.setText(getString(R.string.err_code_51));
         }
 
-        if(signal_strength > 127){
+        if (signal_strength > 127) {
             signal_strength = 256 - signal_strength;
 //            CacheData.setMsg_info("==========signal_strength=====+++====== > 127======>"+signal_strength ,0);
             signalStrength.setText(("-" + signal_strength));
             signalStrengthTest.setText(("-" + signal_strength));
-        }else{
+        } else {
 //            CacheData.setMsg_info("==========signal_strength=====+++====== <= 127======>"+signal_strength ,0);
             signalStrength.setText("" + signal_strength);
             signalStrengthTest.setText(("-" + signal_strength));
@@ -2029,14 +2008,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         changePage(brightness);
         //测试界面显示 end
 
-        if(IConstant.PZ_FLAG){
-            sp_pz_jc_old = (sp_pz_jc_old == null) ? "":sp_pz_jc_old;
-            if(!sp_pz_jc_old.equals(sp_pz_jc)){
-                if(IConstant.SP_PZ_JC_ON.equals(sp_pz_jc)){
+        if (IConstant.PZ_FLAG) {
+            sp_pz_jc_old = (sp_pz_jc_old == null) ? "" : sp_pz_jc_old;
+            if (!sp_pz_jc_old.equals(sp_pz_jc)) {
+                if (IConstant.SP_PZ_JC_ON.equals(sp_pz_jc)) {
                     infoLayout.setVisibility(View.VISIBLE);
                     warnLLayout.setFocusable(false);
                     warnLLayout.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     infoLayout.setVisibility(View.VISIBLE);
                     warnLLayout.setFocusable(false);
                     warnLLayout.setVisibility(View.GONE);
@@ -2055,16 +2034,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     /**
-     *
      * 打开摄像头进行视频监控或回看视频
-     * @param
      *
+     * @param
      */
- //   private void OpenCameraInfo(){
-    public void OpenCameraInfo(){
-        try{
+    //   private void OpenCameraInfo(){
+    public void OpenCameraInfo() {
+        try {
             if (!CameraInterface.getInstance().CameraState()) {
                 // check Android 6 permission
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
@@ -2073,7 +2050,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         @Override
                         public void run() {
                             //CameraInterface.getInstance().doStopCamera();
-                            CameraInterface.getInstance().doOpenCamera(MainActivity.this,cameraIndex);
+                            CameraInterface.getInstance().doOpenCamera(MainActivity.this, cameraIndex);
                         }
                     };
                     openThread.start();
@@ -2084,9 +2061,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
 
-        }catch (Exception e){
-            LogUtil.d("cameraHasOpened","没有连接摄像头。");
-            LogUtil.e(TAG,"===================OpenCameraInfo===========================>"+e.getMessage());
+        } catch (Exception e) {
+            LogUtil.d("cameraHasOpened", "没有连接摄像头。");
+            LogUtil.e(TAG, "===================OpenCameraInfo===========================>" + e.getMessage());
             e.printStackTrace();
         }
 
@@ -2095,7 +2072,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        try{
+        try {
             if (requestCode == IConstant.TAKE_PHOTO_REQUEST_CODE) {
                 for (int index = 0; index < permissions.length; index++) {
                     switch (permissions[index]) {
@@ -2105,7 +2082,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     @Override
                                     public void run() {
                                         CameraInterface.getInstance().doStopCamera();
-                                        CameraInterface.getInstance().doOpenCamera(MainActivity.this,cameraIndex);
+                                        CameraInterface.getInstance().doOpenCamera(MainActivity.this, cameraIndex);
                                     }
                                 };
                                 openThread.start();
@@ -2114,8 +2091,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             }
-        }catch (Exception e){
-            LogUtil.e(TAG,"===================onRequestPermissionsResult===========================>"+e.getMessage());
+        } catch (Exception e) {
+            LogUtil.e(TAG, "===================onRequestPermissionsResult===========================>" + e.getMessage());
             e.printStackTrace();
         }
 
@@ -2125,70 +2102,69 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void cameraHasOpened() {
-        try{
+        try {
 
-            float previewRate =0.1f;
+            float previewRate = 0.1f;
             try {
                 Thread.sleep(200);
-            }catch (InterruptedException e){
+            } catch (InterruptedException e) {
 
             }
 
             SurfaceHolder holder = cameraView.getSurfaceHolder();
             CameraInterface.getInstance().doStartPreview(holder, previewRate);
-        }catch (Exception e){
-            LogUtil.e(TAG,"===================cameraHasOpened===========================>"+e.getMessage());
+        } catch (Exception e) {
+            LogUtil.e(TAG, "===================cameraHasOpened===========================>" + e.getMessage());
             e.printStackTrace();
         }
 
     }
 
-    private void  brightNess(int flag){
+    private void brightNess(int flag) {
         int val;
-        CacheData.setMsg_info("=================brightNess==========tvBright=======flag======="+"" + flag,1);
-        if((flag&0x4) == 0x4) {
-            if(change_bright_old == 0){
+        CacheData.setMsg_info("=================brightNess==========tvBright=======flag=======" + "" + flag, 1);
+        if ((flag & 0x4) == 0x4) {
+            if (change_bright_old == 0) {
                 SharedPreferences share = getSharedPreferences("Acitivity", Context.MODE_WORLD_READABLE);
                 val = share.getInt("value", 200);
                 if (val >= 250) {
                     val = 2;
-                }else if(val >= 200){
+                } else if (val >= 200) {
                     val = 250;
-                }else{
+                } else {
                     val = val + 50;
                 }
-                CacheData.setMsg_info("=================brightNess==========tvBright=============="+"" + (val*100)/250 + "%",1);
-                tvBright.setText("" + (val*100)/250 + "%");
+                CacheData.setMsg_info("=================brightNess==========tvBright==============" + "" + (val * 100) / 250 + "%", 1);
+                tvBright.setText("" + (val * 100) / 250 + "%");
                 SharedPreferences.Editor editor = share.edit();//获取编辑器
                 editor.putInt("value", val);
                 editor.commit();//提交修改
                 SystemBrightManager.setBrightness(this, val);
             }
             change_bright_old = 1;
-        }else{
+        } else {
             change_bright_old = 0;
         }
 
 
-
     }
 
-    private TimerTask getTimerTask_loc(){
+    private TimerTask getTimerTask_loc() {
 
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                try{
-                    if(CacheData.getThread_flag()==12){
+                try {
+                    if (CacheData.getThread_flag() == 12) {
                         serialhelp.close();
                         initSerial();
-                       // CacheData.setMsg_info("============================getTimerTask_loc=====================initSerial==",0);
-                    }else{
+                        // CacheData.setMsg_info("============================getTimerTask_loc=====================initSerial==",0);
+                    } else {
                         CacheData.setThread_flag(CacheData.getThread_flag() + 1);
                     }
 
-                }catch (Exception e){
-                    LogUtil.e(TAG,"===================TimerTask===========================>"+e.getMessage());
+                } catch (Exception e) {
+                    LogUtil.e(TAG, "===================TimerTask===========================>" + e.getMessage());
                     e.printStackTrace();
                 }
 

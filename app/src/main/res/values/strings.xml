@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SYMC3</string>
+    <string name="app_name">SYMCCAP</string>
     <string name="err_code_0"> </string>
     <string name="err_code_1">禁止臂架动作</string>
     <string name="err_code_2">禁止支腿动作</string>
