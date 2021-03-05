@@ -1,0 +1,1759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@android:color/black"
+    android:baselineAligned="false">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+     <LinearLayout
+            android:id="@+id/infoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        <include android:id="@+id/statusLayout551"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:layout_weight="12"
+            android:orientation="horizontal"
+            layout="@layout/main_test_878_new"
+            />
+
+      <LinearLayout
+        android:id="@+id/statusLayout552"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:visibility="visible"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/statusLayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/statusLayout22"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:orientation="horizontal">
+
+                <cn.com.sany.symc.zg.ui.CameraSurfaceView
+                    android:id="@+id/cameraView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:visibility="visible" />.
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/statusLayout33"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:id="@+id/statusLayout44"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:background="@color/deep_blue"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="1"
+                            android:textColor="@color/white"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="5dp"
+                            android:text="水罐水位"
+                            android:textSize="15sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/haveWaterlevelLayout"
+                            android:layout_width="20dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:visibility="visible"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="18dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/shape_llayout_battery_bg"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/tvWaterlevel1"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel2"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel3"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel4"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel5"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel6"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel7"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+                                <TextView
+                                    android:id="@+id/tvWaterlevel8"
+                                    android:layout_width="8dp"
+                                    android:layout_height="5dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:background="@color/white"
+                                    android:orientation="vertical"
+                                    />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/statusLayout55"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:layout_weight="15"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:background="@color/deep_blue"
+                        android:paddingLeft="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="水泵运行状态："
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/WaterPumpStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="停止"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="                臂架状态："
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/ArmSpreadStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text=" "
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="visible"
+                        android:background="@color/black"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:background="@color/deep_blue"
+                        android:paddingLeft="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:text="转塔对中状态"
+                            android:textSize="18sp"/>
+
+                        <LinearLayout
+                            android:id="@+id/TurretHitok"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/shape_text_close2"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/TurretHitfail"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/shape_text_close3"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="visible"></LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvdxTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            android:text="                  倒吸："
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/tvDxState"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:visibility="gone"
+                            android:text=""
+                            android:textSize="18sp"/>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_marginLeft="100dp"
+                            android:textColor="@color/white"
+                            android:text="亮度百分比："
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/tvBright"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:textColor="@color/white"
+                            android:text=""
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+
+
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="visible"
+                        android:background="@color/black"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:visibility="visible"
+                        android:background="@color/deep_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red"
+                            android:text="故障代码："
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/ErrCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red"
+                            android:layout_marginLeft="10dp"
+                            android:text="无"
+                            android:textSize="18sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statusLayout1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/statusLayout66"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:gravity="center"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/SignalStrength"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:text="信号"/>-->
+
+                    <FrameLayout
+                        android:id="@+id/signalStrengthLayout"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/tvSignal1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/ic_signal1"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tvSignal2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/ic_signal2"
+                            android:visibility="visible"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/signalStrength"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_gravity="right|bottom"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="0dp"
+                            android:gravity="right|bottom"
+                            android:text=""
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:visibility="invisible"
+                            android:orientation="horizontal">
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/signalStrengthLayout1"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/signalStrength1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="有线"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            android:orientation="horizontal">
+
+                        </TextView>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/haveBatteryLayout"
+                        android:layout_width="42dp"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="3dp"
+                            android:layout_height="8dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/shape_text_close1"
+                            android:visibility="visible"
+                            android:orientation="horizontal">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="39dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/shape_llayout_battery_bg"
+                            android:visibility="visible"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/tvBattery4"
+                                android:layout_width="4dp"
+                                android:layout_height="8dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@color/green"
+                                android:visibility="visible"
+                                android:orientation="horizontal"
+                            />
+                            <TextView
+                                android:id="@+id/tvBattery3"
+                                android:layout_width="4dp"
+                                android:layout_height="8dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:background="@color/green"
+                                android:visibility="visible"
+                                android:orientation="horizontal"
+                                />
+                            <TextView
+                                android:id="@+id/tvBattery2"
+                                android:layout_width="4dp"
+                                android:layout_height="8dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:background="@color/green"
+                                android:visibility="visible"
+                                android:orientation="horizontal"
+                                />
+                            <TextView
+                                android:id="@+id/tvBattery1"
+                                android:layout_width="4dp"
+                                android:layout_height="8dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:gravity="center"
+                                android:background="@color/green"
+                                android:visibility="visible"
+                                android:orientation="horizontal"
+                                />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lowBatteryLayout"
+                        android:layout_width="42dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="3dp"
+                            android:layout_height="8dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/shape_text_close"
+                            android:orientation="horizontal">
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="39dp"
+                            android:layout_height="18dp"
+                            android:layout_marginLeft="1dp"
+                            android:background="@drawable/shape_llayout_battery_empty"
+                            android:orientation="horizontal">
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/startLLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:layout_weight="4"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/RemoteCtrlStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="未启动"
+                        android:textSize="18sp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/statusLayout77"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/statusLayout88"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:visibility="visible"-->
+                    <!--android:layout_weight="5"-->
+                    <!--android:background="@color/deep_blue"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="1#臂架角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle1H"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle1L"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="2#臂架角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle2H"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle2L"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="3#臂架角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle3H"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle3L"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="4#臂架角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle4H"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle4L"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="5#臂架角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle5H"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle5L"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="6#臂架角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle6H"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/ArmAngle6L"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="水流量："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/WaterFlowHigh"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/WaterFlowLow"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="当前风速："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/WindSpeedHigh"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/WindSpeedLow"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="转塔角度："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/TurretAngleHigh"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/TurretAngleLow"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="发动机转速："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/EngineSpeedHigh"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/EngineSpeedLow"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="液压系统压力："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/HydraulicPress"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:orientation="horizontal">-->
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="水泵出口压力："-->
+                            <!--android:textSize="18sp"/>-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/PumpVentPress"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:textColor="@color/white"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18sp"/>-->
+
+                    <!--</LinearLayout>-->
+
+                <!--</LinearLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/statusLayout99"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/deep_blue"
+                    android:visibility="visible"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="1#臂架角度："
+                                android:textSize="18sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/ArmAngle1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="2#臂架角度："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/ArmAngle2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/waterLLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="3#臂架角度："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                />
+
+                            <TextView
+                                android:id="@+id/ArmAngle3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="4#臂架角度："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/ArmAngle4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="5#臂架角度："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/ArmAngle5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="6#臂架角度："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/ArmAngle6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="水流量："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/WaterFlow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="当前风速："
+                                android:textSize="18sp"
+                                android:layout_marginTop="7dp"/>
+
+                            <TextView
+                                android:id="@+id/WindSpeed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="转塔角度："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/TurretAngle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="7dp"/>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="发动机转速："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/EngineSpeed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="液压系统压力："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/HydraulicPress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:visibility="visible"
+                            android:paddingLeft="10dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="水泵出口压力："
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                            <TextView
+                                android:id="@+id/PumpVentPress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="0"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@color/black"
+                            android:layout_marginTop="1dp"
+                            android:orientation="horizontal">
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:visibility="visible"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:visibility="visible"
+                            android:layout_weight="3"
+                            android:orientation="horizontal">
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:visibility="visible"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+
+
+                            <LinearLayout
+                                android:layout_width="20dp"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/haveFoamlevelLayout"
+                                    android:layout_width="20dp"
+                                    android:layout_height="90dp"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="bottom"
+                                    android:visibility="visible"
+                                    android:orientation="vertical">
+
+
+                                    <LinearLayout
+                                        android:layout_width="18dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="bottom"
+                                        android:background="@drawable/shape_llayout_battery_bg"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tvFormlevel1"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel2"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel3"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel4"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel5"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel6"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel7"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+                                        <TextView
+                                            android:id="@+id/tvFormlevel8"
+                                            android:layout_width="8dp"
+                                            android:layout_height="5dp"
+                                            android:layout_gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            android:gravity="center"
+                                            android:background="@color/white"
+                                            android:orientation="vertical"
+                                            />
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:visibility="visible"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ems="1"
+                                    android:textColor="@color/white"
+                                    android:layout_gravity="right|bottom"
+                                    android:layout_marginTop="2dp"
+                                    android:text="泡沫液位"
+                                    android:textSize="15sp"/>
+
+                            </LinearLayout>
+
+                            <!--<LinearLayout-->
+                                <!--android:id="@+id/haveFoamlevelLayout"-->
+                                <!--android:layout_width="20dp"-->
+                                <!--android:layout_height="90dp"-->
+                                <!--android:layout_marginTop="12dp"-->
+                                <!--android:layout_marginLeft="100dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:visibility="visible"-->
+                                <!--android:orientation="vertical">-->
+
+
+                                <!--<LinearLayout-->
+                                    <!--android:layout_width="18dp"-->
+                                    <!--android:layout_height="80dp"-->
+                                    <!--android:background="@drawable/shape_llayout_battery_bg"-->
+                                    <!--android:orientation="vertical">-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel1"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="5dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel2"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel3"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel4"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel5"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel6"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel7"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+                                    <!--<TextView-->
+                                        <!--android:id="@+id/tvFormlevel8"-->
+                                        <!--android:layout_width="8dp"-->
+                                        <!--android:layout_height="5dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginTop="4dp"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:background="@color/white"-->
+                                        <!--android:orientation="vertical"-->
+                                        <!--/>-->
+
+                                <!--</LinearLayout>-->
+
+
+                            <!--</LinearLayout>-->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/warnLLayout"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:focusable="false"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@drawable/shape_warn_bg">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_warn"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="警告"
+                    android:textColor="@color/yellow"
+                    android:textSize="24dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="@string/warn_info"
+                    android:textColor="@color/yellow"
+                    android:textSize="24dp"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
