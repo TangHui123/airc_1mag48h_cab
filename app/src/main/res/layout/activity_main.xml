@@ -52,7 +52,7 @@
                 android:visibility="visible"
                 android:orientation="horizontal">
 
-                <cn.com.sany.symc.zg.ui.CameraSurfaceView
+                <com.sany.symc.cab.ui.CameraSurfaceView
                     android:id="@+id/cameraView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
